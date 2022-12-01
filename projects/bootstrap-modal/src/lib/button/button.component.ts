@@ -9,7 +9,8 @@ const buttonTypes = [
   { id: 5, buttonType: 'info' },
   { id: 6, buttonType: 'light' },
   { id: 7, buttonType: 'dark' },
-  { id: 8, buttonType: 'link' }
+  { id: 8, buttonType: 'link' },
+  { id: 9, buttonType: 'close' }
 ]
 
 const sizeTypes = [
@@ -24,15 +25,17 @@ const sizeTypes = [
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  @Input() buttonTypeId = 0
-  @Input() outline = false
-  @Input() sizeId = 1
+  @Input() sizeId: number = 1
+  @Input() label: string = ''
+  @Input() ariaLabel: string = ''
+  @Input() buttonTypeId: number = 0
+  @Input() outline: boolean = false
   @Output() clickEmitter = new EventEmitter()
 
   getClass (): string {
-    const buttonClass: string = this.buttonTypeId >= 0 && this.buttonTypeId <= 8 ? buttonTypes[this.buttonTypeId].buttonType : buttonTypes[0].buttonType
+    const buttonClass: string = this.buttonTypeId >= 0 && this.buttonTypeId <= 9 ? buttonTypes[this.buttonTypeId].buttonType : buttonTypes[0].buttonType
     const sizeClass: string = this.sizeId >= 0 && this.sizeId <= 2 ? sizeTypes[this.sizeId].size : sizeTypes[1].size
-    const outlineClass: string = this.outline && this.buttonTypeId !== 8 ? 'outline-' : ''
+    const outlineClass: string = this.outline && this.buttonTypeId > 8 ? 'outline-' : ''
     return `btn btn-${outlineClass}${buttonClass} ${sizeClass}`
   }
 

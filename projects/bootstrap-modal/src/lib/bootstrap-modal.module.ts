@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core'
-import { NgbModule, NgbModalModule, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap'
+import { FormsModule } from '@angular/forms'
+import { NgbModule, NgbModalModule, NgbDatepickerModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap'
+
 import { BootstrapModalComponent } from './bootstrap-modal.component'
 import { ButtonComponent } from './button/button.component'
 import { ModalComponent } from './modal/modal.component'
+import { TypeaheadComponent } from './typeahead/typeahead.component'
 
 @NgModule({
   declarations: [
     BootstrapModalComponent,
     ButtonComponent,
-    ModalComponent
+    ModalComponent,
+    TypeaheadComponent
   ],
   imports: [
+    FormsModule,
     NgbModule,
     NgbModalModule,
-    NgbDatepickerModule
+    NgbDatepickerModule,
+    NgbTypeaheadModule
   ],
   exports: [
     BootstrapModalComponent,

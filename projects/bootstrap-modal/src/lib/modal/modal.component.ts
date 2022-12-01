@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
@@ -7,12 +7,15 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
+  @Input() title: string = ''
+  @Input() saveButtonTitle: string = 'Save'
+
   closeResult = ''
 
   constructor (private readonly modalService: NgbModal) { }
 
   open (content: unknown): void {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+    this.modalService.open(content).result.then(
       (result) => {
         this.closeResult = `Closed with: ${result as string}`
       },

@@ -7,7 +7,4 @@ import { Component, ViewEncapsulation } from '@angular/core'
   encapsulation: ViewEncapsulation.None
 })
 export class BootstrapModalComponent {
-  buttonClicked (event: Event): void {
-    console.log(event)
-  }
 }
