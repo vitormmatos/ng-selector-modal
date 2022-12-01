@@ -1,0 +1,37 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@ng-bootstrap/ng-bootstrap': 13.1.1
+  bootstrap: ^5.2.3
+  tslib: ^2.3.0
+
+dependencies:
+  bootstrap: 5.2.3
+  tslib: 2.4.1
+
+devDependencies:
+  '@ng-bootstrap/ng-bootstrap': 13.1.1
+
+packages:
+
+  /@ng-bootstrap/ng-bootstrap/13.1.1:
+    resolution: {integrity: sha512-R6qnmFKT2EwwijBHw7rUXqyo5W90OImHOv7BlsxMNnZLIksWIhqwU00k4UBTfRTnd6JsTPuj/co3MaP61ajILA==}
+    peerDependencies:
+      '@angular/common': ^14.1.0
+      '@angular/core': ^14.1.0
+      '@angular/forms': ^14.1.0
+      '@angular/localize': ^14.1.0
+      '@popperjs/core': ^2.10.2
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      tslib: 2.4.1
+    dev: true
+
+  /bootstrap/5.2.3:
+    resolution: {integrity: sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==}
+    peerDependencies:
+      '@popperjs/core': ^2.11.6
+    dev: false
+
+  /tslib/2.4.1:
+    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
