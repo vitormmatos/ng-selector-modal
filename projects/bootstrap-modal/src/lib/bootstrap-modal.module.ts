@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { NgbModule, NgbModalModule, NgbDatepickerModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap'
+import {
+  NgbModule,
+  NgbModalModule,
+  NgbDatepickerModule,
+  NgbTypeaheadModule
+} from '@ng-bootstrap/ng-bootstrap'
 
 import { BootstrapModalComponent } from './bootstrap-modal.component'
 import { ButtonComponent } from './button/button.component'
@@ -21,10 +26,6 @@ import { TypeaheadComponent } from './typeahead/typeahead.component'
     NgbDatepickerModule,
     NgbTypeaheadModule
   ],
-  exports: [
-    BootstrapModalComponent,
-    ModalComponent,
-    ButtonComponent
-  ]
+  exports: [BootstrapModalComponent, ModalComponent, ButtonComponent]
 })
-export class BootstrapModalModule { }
+export class BootstrapModalModule {}

@@ -12,14 +12,14 @@ export class ModalComponent {
 
   closeResult = ''
 
-  constructor (private readonly modalService: NgbModal) { }
+  constructor (private readonly modalService: NgbModal) {}
 
   open (content: unknown): void {
     this.modalService.open(content).result.then(
-      (result) => {
+      result => {
         this.closeResult = `Closed with: ${result as string}`
       },
-      (reason) => {
+      reason => {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`
       }
     )

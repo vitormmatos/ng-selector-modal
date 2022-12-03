@@ -6,5 +6,4 @@ import { Component, ViewEncapsulation } from '@angular/core'
   styleUrls: ['./bootstrap-modal.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class BootstrapModalComponent {
-}
+export class BootstrapModalComponent {}

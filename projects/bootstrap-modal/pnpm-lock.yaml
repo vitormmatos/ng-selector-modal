@@ -13,9 +13,11 @@ devDependencies:
   bootstrap: 5.2.3
 
 packages:
-
   /@ng-bootstrap/ng-bootstrap/13.1.1:
-    resolution: {integrity: sha512-R6qnmFKT2EwwijBHw7rUXqyo5W90OImHOv7BlsxMNnZLIksWIhqwU00k4UBTfRTnd6JsTPuj/co3MaP61ajILA==}
+    resolution:
+      {
+        integrity: sha512-R6qnmFKT2EwwijBHw7rUXqyo5W90OImHOv7BlsxMNnZLIksWIhqwU00k4UBTfRTnd6JsTPuj/co3MaP61ajILA==
+      }
     peerDependencies:
       '@angular/common': ^14.1.0
       '@angular/core': ^14.1.0
@@ -28,10 +30,16 @@ packages:
     dev: true
 
   /bootstrap/5.2.3:
-    resolution: {integrity: sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==}
+    resolution:
+      {
+        integrity: sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==
+      }
     peerDependencies:
       '@popperjs/core': ^2.11.6
     dev: true
 
   /tslib/2.4.1:
-    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
+    resolution:
+      {
+        integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==
+      }

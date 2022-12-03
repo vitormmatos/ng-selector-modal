@@ -33,9 +33,16 @@ export class ButtonComponent {
   @Output() clickEmitter = new EventEmitter()
 
   getClass (): string {
-    const buttonClass: string = this.buttonTypeId >= 0 && this.buttonTypeId <= 9 ? buttonTypes[this.buttonTypeId].buttonType : buttonTypes[0].buttonType
-    const sizeClass: string = this.sizeId >= 0 && this.sizeId <= 2 ? sizeTypes[this.sizeId].size : sizeTypes[1].size
-    const outlineClass: string = this.outline && this.buttonTypeId > 8 ? 'outline-' : ''
+    const buttonClass: string =
+      this.buttonTypeId >= 0 && this.buttonTypeId <= 9
+        ? buttonTypes[this.buttonTypeId].buttonType
+        : buttonTypes[0].buttonType
+    const sizeClass: string =
+      this.sizeId >= 0 && this.sizeId <= 2
+        ? sizeTypes[this.sizeId].size
+        : sizeTypes[1].size
+    const outlineClass: string =
+      this.outline && this.buttonTypeId > 8 ? 'outline-' : ''
     return `btn btn-${outlineClass}${buttonClass} ${sizeClass}`
   }
 

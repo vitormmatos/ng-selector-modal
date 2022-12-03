@@ -3,7 +3,7 @@ ignorePatterns:
   - projects/**/*
 overrides:
   - files:
-      - "*.ts"
+      - '*.ts'
     parserOptions:
       project:
         - tsconfig.json
@@ -13,18 +13,18 @@ overrides:
       - plugin:@angular-eslint/template/process-inline-templates
       - standard-with-typescript
     rules:
-      "@angular-eslint/directive-selector":
+      '@angular-eslint/directive-selector':
         - error
         - type: attribute
           prefix: app
           style: camelCase
-      "@angular-eslint/component-selector":
+      '@angular-eslint/component-selector':
         - error
         - type: element
           prefix: app
           style: kebab-case
   - files:
-      - "*.html"
+      - '*.html'
     extends:
       - plugin:@angular-eslint/template/recommended
     rules: {}

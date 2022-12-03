@@ -8,19 +8,20 @@
     ></lib-button>
   </div>
   <div class="modal-body">
-	<lib-typeahead></lib-typeahead>
+    <lib-typeahead></lib-typeahead>
   </div>
   <div class="modal-footer">
     <lib-button
       (clickEmitter)="modal.close('Save click')"
       [ariaLabel]="saveButtonTitle"
-	  [label]="saveButtonTitle"
-      ></lib-button
-    >
+      [label]="saveButtonTitle"
+    ></lib-button>
   </div>
 </ng-template>
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+  Launch demo modal
+</button>
 
 <hr />
 

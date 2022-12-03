@@ -9,8 +9,7 @@ describe('BootstrapModalComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [BootstrapModalComponent]
-    })
-      .compileComponents()
+    }).compileComponents()
 
     fixture = TestBed.createComponent(BootstrapModalComponent)
     component = fixture.componentInstance

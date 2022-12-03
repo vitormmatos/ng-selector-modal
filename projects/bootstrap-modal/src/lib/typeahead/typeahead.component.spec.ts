@@ -9,8 +9,7 @@ describe('TypeaheadComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TypeaheadComponent]
-    })
-      .compileComponents()
+    }).compileComponents()
 
     fixture = TestBed.createComponent(TypeaheadComponent)
     component = fixture.componentInstance
