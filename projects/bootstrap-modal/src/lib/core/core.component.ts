@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 import { ModalComponent } from '../modal/modal.component'
 
@@ -12,6 +12,9 @@ export class CoreComponent {
   @Input() array!: unknown[]
   @Input() arrayProperty!: string
   @Input() saveButtonTitle: string = 'Save'
+  @Output() savedUpdatedArray = new EventEmitter()
+  @Output() savedRemovedArray = new EventEmitter()
+
   modalRef: any
   
   constructor (private modalService: NgbModal) {
@@ -23,5 +26,7 @@ export class CoreComponent {
     this.modalRef.componentInstance.array = this.array
     this.modalRef.componentInstance.arrayProperty = this.arrayProperty
     this.modalRef.componentInstance.saveButtonTitle = this.saveButtonTitle
+    this.modalRef.componentInstance.savedUpdatedArray = this.savedUpdatedArray
+    this.modalRef.componentInstance.savedRemovedArray = this.savedRemovedArray
   }
 }

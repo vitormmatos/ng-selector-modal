@@ -19,7 +19,7 @@ import { CoreComponent } from './core/core.component';
     ButtonComponent,
     ModalComponent,
     TypeaheadComponent,
-    CoreComponent
+    CoreComponent,
   ],
   imports: [
     FormsModule,
