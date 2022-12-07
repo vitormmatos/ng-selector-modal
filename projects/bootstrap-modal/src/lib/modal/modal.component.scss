@@ -1,0 +1,29 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.btn-group {
+    margin-bottom: 1em;
+}
+
+.removed-list {
+    width: 13em;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete-button {
+    border: 0;
+    margin-left: 3em;
+    background-color: transparent;
+    justify-self: flex-end;
+}
+
+.delete-icon {
+    filter: invert(85%) sepia(7%) saturate(6%) hue-rotate(324deg) brightness(91%) contrast(92%);
+}
+
+.delete-button:hover {
+    filter: invert(40%) sepia(89%) saturate(3822%) hue-rotate(341deg) brightness(90%) contrast(90%);
+}

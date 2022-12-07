@@ -1,28 +1,51 @@
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">{{ title }}</h4>
-    <lib-button
-      [buttonTypeId]="9"
-      (clickEmitter)="modal.dismiss('Cross click')"
-      ariaLabel="Close"
-    ></lib-button>
-  </div>
-  <div class="modal-body">
-    <lib-typeahead></lib-typeahead>
-  </div>
-  <div class="modal-footer">
-    <lib-button
-      (clickEmitter)="modal.close('Save click')"
-      [ariaLabel]="saveButtonTitle"
-      [label]="saveButtonTitle"
-    ></lib-button>
-  </div>
-</ng-template>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
-  Launch demo modal
-</button>
-
-<hr />
-
-<pre>{{ closeResult }}</pre>
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">{{ title }}</h4>
+  <lib-button [buttonTypeId]="9" ariaLabel="Close" (clickEmitter)="activeModal.dismiss()"></lib-button>
+</div>
+<div class="modal-body">
+  <div class="btn-group me-3">
+    <lib-typeahead
+      [array]="array"
+      [arrayProperty]="arrayProperty"
+    ></lib-typeahead>
+    <div
+      class="btn-group"
+      ngbDropdown
+      role="group"
+      aria-label="Button group with nested dropdown"
+    >
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle-split"
+        ngbDropdownToggle
+      ></button>
+      <div class="dropdown-menu" ngbDropdownMenu>
+        <button
+          ngbDropdownItem
+          *ngFor="let obj of array"
+          (click)="select(obj)"
+          ngbDropdownItem
+        >
+          {{ obj[arrayProperty] }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <ul class="list-group removed-list">
+    <li *ngFor="let obj of removedArray" class="list-group-item">
+      {{ obj[arrayProperty]
+      }}<button (click)="remove(obj)" class="delete-button">
+        <span class="material-symbols-outlined delete-icon"> delete </span>
+      </button>
+    </li>
+  </ul>
+</div>
+<div class="modal-footer">
+  <lib-button
+    (click)="activeModal.close()"
+    [ariaLabel]="saveButtonTitle"
+    [label]="saveButtonTitle"
+  ></lib-button>
+</div>

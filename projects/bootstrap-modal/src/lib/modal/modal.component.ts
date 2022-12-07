@@ -1,37 +1,28 @@
-import { Component, Input } from '@angular/core'
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'lib-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss']
+  styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent {
-  @Input() title: string = ''
-  @Input() saveButtonTitle: string = 'Save'
+  @Input() title!: string
+  @Input() saveButtonTitle!: string
+  @Input() array!: any[]
+  @Input() removedArray: any[] = []
+  @Input() arrayProperty!: string
+  @Output() savedArray = new EventEmitter()
 
-  closeResult = ''
-
-  constructor (private readonly modalService: NgbModal) {}
-
-  open (content: unknown): void {
-    this.modalService.open(content).result.then(
-      result => {
-        this.closeResult = `Closed with: ${result as string}`
-      },
-      reason => {
-        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`
-      }
-    )
+  constructor(public activeModal: NgbActiveModal) {}
+  
+  select(obj: any){
+    this.array = this.array.filter(item => item.id !== obj.id)
+    this.removedArray.push(obj)
   }
 
-  private getDismissReason (reason: number): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC'
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop'
-    } else {
-      return `with: ${reason}`
-    }
+  remove(obj: any){
+    this.removedArray = this.removedArray.filter(item => item.id !== obj.id)
+    this.array.push(obj)
   }
 }

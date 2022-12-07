@@ -1,6 +1,6 @@
 export * from './lib/bootstrap-modal.service'
-export * from './lib/bootstrap-modal.component'
 export * from './lib/modal/modal.component'
 export * from './lib/button/button.component'
 export * from './lib/typeahead/typeahead.component'
+export * from './lib/core/core.component'
 export * from './lib/bootstrap-modal.module'

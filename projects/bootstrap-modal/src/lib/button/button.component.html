@@ -1,8 +1,8 @@
 <button
   type="button"
-  class="{{ getClass() }}"
+  [class]="getClass()"
   (click)="onClick()"
-  attr.aria-label="{{ ariaLabel }}"
+  [attr.aria-label]="ariaLabel"
 >
   {{ label }}
 </button>
